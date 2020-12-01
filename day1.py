@@ -1,6 +1,6 @@
 import inp
 
-prompt = inp.parsefile()
+prompt = inp.parse_file_int()
 
 # i accidentally deleted all my files trying to add them to git (don't ask) so have a really crappy solution for today
 for i in prompt:
