@@ -9,5 +9,5 @@ def parse_file_str():
     inp = open('input.txt')
     out = []
     for line in inp.readlines():
-        out.append(line)
+        out.append(line.strip('\n'))
     return out
