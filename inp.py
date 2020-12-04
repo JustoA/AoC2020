@@ -11,3 +11,12 @@ def parse_file_str():
     for line in inp.readlines():
         out.append(line.strip('\n'))
     return out
+
+def parse_file_passport():
+    inp = open('input.txt')
+    buf = inp.read()
+    buf = buf.split('\n\n')
+    ret = []
+    for passport in buf:
+        ret.append(passport.replace('\n',' '))
+    return ret

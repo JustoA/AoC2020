@@ -12,8 +12,8 @@ import inp  # my kooky and crazy input parser
 
 
 def main():
-    prompt = inp.parse_file_str()
-    height = len(prompt)
+    prompt = inp.parse_file_str()  # parses the input into a list of rows
+    height = len(prompt)  # how high is the input
     ans = 1
     slopes = [(1, 1), (3, 1), (5, 1), (7, 1), (1, 2)]
 
