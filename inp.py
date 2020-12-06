@@ -12,7 +12,7 @@ def parse_file_str():
         out.append(line.strip('\n'))
     return out
 
-def parse_file_passport():
+def parse_file_two_eol():
     inp = open('input.txt')
     buf = inp.read()
     buf = buf.split('\n\n')
