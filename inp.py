@@ -18,5 +18,14 @@ def parse_file_passport():
     buf = buf.split('\n\n')
     ret = []
     for passport in buf:
-        ret.append(passport.replace('\n',' '))
+        ret.append(passport.replace('\n', ' '))
+    return ret
+
+def parse_file_questionaire():
+    inp = open('input.txt')
+    buf = inp.read()
+    buf = buf.split('\n\n')
+    ret = []
+    for passport in buf:
+        ret.append(passport)
     return ret
