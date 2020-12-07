@@ -29,3 +29,12 @@ def parse_file_questionaire():
     for passport in buf:
         ret.append(passport)
     return ret
+
+def parse_file_rules():
+    inp = open('input.txt')
+    buf = inp.read()
+    buf = buf.split('\n')
+    ret = []
+    for rule in buf:
+        ret.append(rule)
+    return ret
