@@ -1,6 +1,7 @@
 import inp  # my [REDACTED] input parser
 import copy
 
+
 # okay, this code gets the warning.
 
 #########################################################################
@@ -30,7 +31,7 @@ def check_surrounding(i, j, arr):
         for l in range(-1, 2):
             if k == 0 and l == 0:
                 continue
-            if 0 <= i + k < len(arr) and 0 <= j + l < len(arr[0]):  # height check
+            if 0 <= i + k < len(arr) and 0 <= j + l < len(arr[0]):  # bounds check
                 if arr[i + k][j + l] == '#':
                     filled += 1
                 else:
@@ -88,13 +89,13 @@ def check_surrounding_view(i, j, arr):
         for l in range(-1, 2):
             if k == 0 and l == 0:
                 continue
-            view_y, view_x = i+k, j+l
+            view_y, view_x = i + k, j + l
             if check_legal(view_y, view_x, arr):
                 while check_legal(view_y, view_x, arr) and arr[view_y][view_x] == '.':
                     view_y += k
                     view_x += l
                 if check_legal(view_y, view_x, arr) and arr[view_y][view_x] == '#':
-                    filled += 1
+                    filled += 1  # 👁👄👁 i see a human being
                 else:
                     empty += 1
     return filled, empty
@@ -106,14 +107,14 @@ def run_one_round_two(arr):
         for j in range(len(arr[0])):  # seats
             if arr[i][j] != '.':
                 filled, empty = check_surrounding_view(i, j, arr)
-                if empty > 8 or filled > 8:
+                if empty > 8 or filled > 8:  # reality broke lol
                     print("ABORT")
                     exit(11037)
                 # print(filled,empty)
                 if filled == 0:
-                    new[i][j] = '#'
+                    new[i][j] = '#'  # ooh empty seat
                 elif filled >= 5:
-                    new[i][j] = 'L'
+                    new[i][j] = 'L'  # im leabing
                 else:
                     new[i][j] = arr[i][j]
 
