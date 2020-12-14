@@ -1,3 +1,4 @@
+import copy
 def parse_file_int():
     inp = open('input.txt')
     out = []
@@ -51,4 +52,24 @@ def parse_file_stringcode():
     ret = []
     for rule in buf:
         ret.append(rule.split(' '))
+    return ret
+
+def parse_file_docker():
+    inp = open('input.txt')
+    buf = inp.read()
+    buf = buf.split('\n')
+    ret = []
+    temp = []
+    for line in buf:
+        #print(line)
+        if 'mask' in line:
+            if len(temp) != 0:
+                ret.append(copy.deepcopy(temp))
+            temp = [line]
+        else:
+            temp.append(line)
+        #print(temp)
+    ret.append(temp)
+    #print(ret)
+
     return ret
