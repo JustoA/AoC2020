@@ -26,10 +26,10 @@ def apply_mask(mask, num):
 def main():
     instream = inp.parse_file_docker()
     memory = {}
-    for thingy in instream:
-        mask = thingy[0].split('=')[1].strip()
-        for uh in thingy[1:]:
-            address, value = unwrapped(uh)
+    for mask_write_set in instream:
+        mask = mask_write_set[0].split('=')[1].strip()
+        for write_op in mask_write_set[1:]:
+            address, value = unwrapped(write_op)
             memory[address] = apply_mask(mask,value)
 
     return sum(memory.values())
