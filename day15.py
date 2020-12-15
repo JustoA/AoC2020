@@ -15,4 +15,4 @@ def main(target):
 
 
 print(f'part 1: {main(2020)}')
-print(f'part 2: {main(3000000)}')  # i learned the power of python 3.6 format strings
+print(f'part 2: {main(30000000)}')  # i learned the power of python 3.6 format strings
