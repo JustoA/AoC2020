@@ -9,11 +9,10 @@ def main(target):
     while numbers_uttered < target - 1:
         cur_num = INPUT[numbers_uttered]
         if cur_num not in numbers.keys():
-            INPUT.append(0)
-            numbers[cur_num] = numbers_uttered
+            INPUT.append(0)   
         else:
             INPUT.append(numbers_uttered - numbers[cur_num])
-            numbers[cur_num] = numbers_uttered
+        numbers[cur_num] = numbers_uttered
         numbers_uttered += 1
     return INPUT[-1]
 
