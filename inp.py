@@ -1,4 +1,6 @@
 import copy
+
+
 def parse_file_int():
     inp = open('input.txt')
     out = []
@@ -19,10 +21,7 @@ def parse_file_two_eol():
     inp = open('input.txt')
     buf = inp.read()
     buf = buf.split('\n\n')
-    ret = []
-    for passport in buf:
-        ret.append(passport.replace('\n', ' '))
-    return ret
+    return buf
 
 
 def parse_file_questionaire():
@@ -54,6 +53,7 @@ def parse_file_stringcode():
         ret.append(rule.split(' '))
     return ret
 
+
 def parse_file_docker():
     inp = open('input.txt')
     buf = inp.read()
@@ -61,15 +61,29 @@ def parse_file_docker():
     ret = []
     temp = []
     for line in buf:
-        #print(line)
+        # print(line)
         if 'mask' in line:
             if len(temp) != 0:
                 ret.append(copy.deepcopy(temp))
             temp = [line]
         else:
             temp.append(line)
-        #print(temp)
+        # print(temp)
     ret.append(temp)
-    #print(ret)
+    # print(ret)
 
+    return ret
+
+
+def parse_file_tickets():
+    inp = open('input.txt')
+    buf = inp.read()
+    buf = buf.split('\n\n')
+    tickets = [x.split(',') for x in buf[2].split('\n')[1:]]  # i love python
+    int_tickets = []
+    my_ticket = [int(y) for y in buf[1].split('\n')[1].split(',')]
+    for ticket in tickets:
+        int_ticket = [int(y) for y in ticket]
+        int_tickets.append(int_ticket)
+    ret = [buf[0].split('\n'), my_ticket, int_tickets]
     return ret
