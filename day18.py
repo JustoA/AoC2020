@@ -1,6 +1,4 @@
-import copy
 import re
-
 import inp  # my [REDACTED] input parser
 
 
@@ -17,7 +15,7 @@ class MyInt(int):
 
 
 def evaluate_eq(eq):
-    eq = re.sub('(\d)', r'MyInt(\1)', eq)
+    eq = re.sub(r'(\d)', r'MyInt(\1)', eq)
     eq = eq.replace('*', '-')
     return eval(eq)
 
@@ -31,7 +29,7 @@ def main():
 
 
 def evaluate_eq2(eq):
-    eq = re.sub('(\d)', r'MyInt(\1)', eq)
+    eq = re.sub(r'(\d)', r'MyInt(\1)', eq)
     eq = eq.replace('*', "-").replace('+', '*')
     return eval(eq)
 
