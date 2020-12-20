@@ -17,7 +17,7 @@ def parse_file_str():
     return out
 
 
-def parse_file_two_eol():
+def parse_file_two_newline():
     inp = open('input.txt')
     buf = inp.read()
     buf = buf.split('\n\n')
@@ -86,4 +86,21 @@ def parse_file_tickets():
         int_ticket = [int(y) for y in ticket]
         int_tickets.append(int_ticket)
     ret = [buf[0].split('\n'), my_ticket, int_tickets]
+    return ret
+
+
+def parse_file_not_regex():
+    inp = open('input.txt')
+    buf = inp.read()
+    buf = buf.split('\n\n')
+    ret = []
+    ret.append(buf[0].split('\n'))
+    ret.append(buf[1].split('\n'))
+    return ret
+
+def parse_file_puzzle():
+    inp = open('input.txt')
+    buf = inp.read()
+    buf = buf.split('\n\n')
+    ret = [x.split('\n') for x in buf]
     return ret

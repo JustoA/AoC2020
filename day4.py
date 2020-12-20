@@ -34,7 +34,7 @@ def check_pid(passpid):  # it's more likely than you think!
 
 
 def main():
-    prompt = inp.parse_file_two_eol()  # parses the input into a list of rows
+    prompt = inp.parse_file_two_newline()  # parses the input into a list of rows
     # part 1
 
     valid = 0

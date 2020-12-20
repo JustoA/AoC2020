@@ -12,7 +12,7 @@ def checkq(group, a):
 
 
 def main():
-    prompt = inp.parse_file_two_eol()  # refactored because connor told me to <3
+    prompt = inp.parse_file_two_newline()  # refactored because connor told me to <3
     ans = 0
     for question in prompt:
         ans += len(set(question))
