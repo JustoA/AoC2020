@@ -11,9 +11,8 @@ def parse_file_int():
 
 def parse_file_str():
     inp = open('input.txt')
-    out = []
-    for line in inp.readlines():
-        out.append(line.strip('\n'))
+    buf = inp.read()
+    out = buf.split('\n')
     return out
 
 
